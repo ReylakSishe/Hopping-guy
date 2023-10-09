@@ -5,18 +5,14 @@ window = pyglet.window.Window()
 
 @window.event
 def on_key_press(symbol, modifiers):
-    if symbol == key.A:
-        print('La tecla A ha sido presionada.')
+    if symbol == key.UP:
+        print('La tecla "Arriba" ha sido presionada.')
     elif symbol == key.LEFT:
-        print('La tecla Izquierda ha sido presionada.')
-    elif symbol == key.ENTER:
-        print('La tecla Enter ha sido presionada.')
-    elif symbol == key.P:
-        print('La tecla P ha sido presionada')
+        print('La tecla "Izquierda" ha sido presionada.')
+    elif symbol == key.DOWN:
+        print('La tecla "Abajo" ha sido presionada.')
     elif symbol == key.RIGHT:
-        print('La tecla Derecha ha sido presionada')
-    elif symbol == key.TAB:
-        print('La tecla Tab ha sido')
+        print('La tecla "Derecha" ha sido presionada')
 
 @window.event
 def on_draw():
