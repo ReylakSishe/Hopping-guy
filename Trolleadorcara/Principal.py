@@ -2,7 +2,8 @@ import pyglet
 from pyglet.window import key
 from pyglet.window import mouse
 
-window = pyglet.window.Window()
+window = pyglet.window.Window(1280, 720)
+
 
 @window.event
 def on_key_press(symbol, modifiers):
@@ -15,6 +16,7 @@ def on_key_press(symbol, modifiers):
     elif symbol == key.RIGHT:
         print('La tecla "Derecha" ha sido presionada')
 
+
 @window.event
 def on_mouse_press(x, y, button, modifiers):
     if button == mouse.LEFT:
@@ -24,8 +26,21 @@ def on_mouse_press(x, y, button, modifiers):
     elif button == mouse.MIDDLE:
         print("usted ha usado el click medio")
 
+
+Rickroll = pyglet.resource.media(
+    "Recursos/Musica/Rick Astley - Never Gonna Give You Up (Official Music Video).mp4",
+)
+
+Reproductor = pyglet.media.Player()
+Reproductor.queue(Rickroll)
+
+
 @window.event
 def on_draw():
     window.clear()
+    Reproductor.get_texture().blit(0, 0)
+
+
+Reproductor.play()
 
 pyglet.app.run()
