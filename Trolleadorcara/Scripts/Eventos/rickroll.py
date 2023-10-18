@@ -2,7 +2,7 @@ import pyglet
 
 window = pyglet.window.Window(1280, 720)
 
-Rickroll = pyglet.resource.media.load(
+Rickroll = pyglet.media.load(
     "/home/reylak/Documentos/GitHub/Hopping-guy/Trolleadorcara/Scripts/SQL Lite/Rick Astley - Never Gonna Give You Up (Official Music Video).mp4",
 )
 

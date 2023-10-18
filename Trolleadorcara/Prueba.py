@@ -1,22 +1,11 @@
-import pyglet
+import sqlite3
 
-window = pyglet.window.Window(1280, 720)
+conexion = sqlite3.connect("agenda2.db")
+cursor = conexion.cursor()
 
-Rickroll = pyglet.resource.media(
-    "Recursos/Musica/Rick Astley - Never Gonna Give You Up (Official Music Video).mp4",
-)
+socios = [("suarez", "ricardo"), ("perez", "luis")]
 
-Reproductor = pyglet.media.Player()
-Reproductor.queue(Rickroll)
+cursor.executemany("insert into socios values (null,?,?)", socios)
 
-
-@window.event
-def on_draw():
-    window.clear()
-    Reproductor.get_texture().blit(0, 0)
-
-
-Reproductor.play()
-
-
-pyglet.app.run()
+conexion.commit()
+conexion.close()
