@@ -3,9 +3,9 @@ import sqlite3
 conexion = sqlite3.connect("agenda2.db")
 cursor = conexion.cursor()
 
-socios = [("suarez", "ricardo"), ("perez", "luis")]
+nuevos_socios = [("Melpene", "Rosa"), ("Melculo", "Ana Lisa")]
 
-cursor.executemany("insert into socios values (null,?,?)", socios)
+cursor.executemany("insert into socios values (null,?,?)", nuevos_socios)
 
 conexion.commit()
 conexion.close()
